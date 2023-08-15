@@ -10,9 +10,9 @@
 
 		//Methods
 
-		public function WithDraw($amount){
+		public function WithDraw($amount){  //this method overwrite parent method, in bankaccount class
 
-			$transDate = new DateTime();
+			$transDate = new DateTime();  //when this function is invoked it will create a new Time object
 
 			$lastTransaction = null;
 
