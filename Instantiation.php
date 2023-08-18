@@ -53,10 +53,29 @@
 	$Account3->Unlock();
 	$Account3->WithDraw(150);
 	
-	$Account3->AddedBonus();
+/* 	$Account3->AddedBonus(); */
 	$Account3->ChangePin( 1234 );
 	$Account3->Validate();
 
-	echo json_encode($Account3, JSON_PRETTY_PRINT);
+/* 	echo json_encode($Account3, JSON_PRETTY_PRINT); */
+
+$AccountList = array($Account1, $Account2, $Account3);
+
+foreach($AccountList  as $Account){
+	$print = $Account->FirstName;
+
+if($Account instanceof AccountPlus){
+	$print .= "AddedBonus()";
+	
+}
+
+if($Account instanceof Savers){
+	$print .= "OrderNewBook() OrderNewDepositBook()";
+	
+}
+
+echo $print . "<br/>";
+
+}
 
 ?>
