@@ -17,6 +17,16 @@
 
 		protected $Locked = false;
 
+		public function __construct($apr, $sc, $fn, $ln, $bal =0, $lock = false)
+		{
+			$this->Balance = $bal;
+			$this->APR = $apr;
+			$this->SortCode = $sc;
+			$this->FirstName = $fn;
+      $this->LastName = $ln;
+			$this->Locked = $lock;
+		}
+
 		//Methods
 
 		public function WithDraw( $amount ){

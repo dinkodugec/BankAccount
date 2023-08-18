@@ -4,14 +4,16 @@
 
 	class ISA extends BankAccount{
 
-		public $TimePeroid = 28;
+		public $TimePeroid;
 
 		public $AdditionalServices;
 
-		public function __construct($time, $service)
+		public function __construct($time, $service, $apr, $sc, $fn, $ln, $bal =0, $lock = false)
 		{
 			  $this->TimePeroid = $time;
 				$this->AdditionalServices = $service;
+
+				parent::__construct($apr, $sc, $fn, $ln, $bal, $lock);
 
 		}
 
@@ -88,12 +90,16 @@
 
 		public $DepositBook = array();
 
+		
+
 		//constructor
 
-		public function __construct($fee, $package)
+		public function __construct($fee, $package, $apr, $sc, $fn, $ln, $bal =0, $lock = false)
 		{
 			$this->MonthlyFee = $fee;
 			$this->Package = $package;
+
+			parent::__construct($apr, $sc, $fn, $ln, $bal, $lock);
 		}
 
 		//Methods
@@ -126,12 +132,14 @@
 
 		private $PinNumber;
 
-		public function __construct($fee, $package, $pin)
+		public function __construct($fee, $package, $pin, $apr, $sc, $fn, $ln, $bal =0, $lock=false)
 		{
 			$this->MonthlyFee = $fee;
 			$this->Package = $package;
 			$this->PinNumber = $pin;
 			$this->Validate();
+
+			parent::__construct($apr, $sc, $fn, $ln, $bal, $lock);
 		}
 
 

@@ -2,12 +2,7 @@
 
 	require("SubClasses.php");
 
-	$Account1 = new ISA(35, "holiday package");
-
-	$Account1->APR = 5.0;
-	$Account1->SortCode = "20-20-20";
-	$Account1->FirstName = "Lawrence";
-	$Account1->LastName = "Turton";
+	$Account1 = new ISA(35, "holiday package", 5.0, "20-20-20", "lawrence", "Turton");
 
 
 	$Account1->Deposit(1000);
@@ -19,12 +14,7 @@
 
 	// Savings Account
 
-	$Account2 = new Savings(50, "carton insurance");
-
-	$Account2->APR = 12.0;
-	$Account2->SortCode = "20-50-20";
-	$Account2->FirstName = "Justin";
-	$Account2->LastName = "Dike";
+	$Account2 = new Savings(50, "carton insurance",12.0,"20-50-20","Justin","Dike");
 
 
 	$Account2->Deposit(500);
@@ -39,13 +29,7 @@
 
 	// Debit Account
 
-	$Account3 = new Debit(30, "spy insurance", 1234 );
-
-	$Account3->APR = 0;
-	$Account3->SortCode = "20-50-20";
-	$Account3->FirstName = "Jason";
-	$Account3->LastName = "Bourne";
-	
+	$Account3 = new Debit(30, "spy insurance", 1234,0, "20-50-20", "Jason","Bourne");
 
 	$Account3->Deposit(15000);
 	$Account3->Lock();
