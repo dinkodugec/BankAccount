@@ -8,6 +8,13 @@
 
 		public $AdditionalServices;
 
+		public function __construct($time, $service)
+		{
+			  $this->TimePeroid = $time;
+				$this->AdditionalServices = $service;
+
+		}
+
 		//Methods
 
 		public function WithDraw($amount){  //this method overwrite parent method, in bankaccount class
@@ -81,6 +88,14 @@
 
 		public $DepositBook = array();
 
+		//constructor
+
+		public function __construct($fee, $package)
+		{
+			$this->MonthlyFee = $fee;
+			$this->Package = $package;
+		}
+
 		//Methods
 
 		public function OrderNewBook(){
@@ -111,9 +126,18 @@
 
 		private $PinNumber;
 
+		public function __construct($fee, $package, $pin)
+		{
+			$this->MonthlyFee = $fee;
+			$this->Package = $package;
+			$this->PinNumber = $pin;
+			$this->Validate();
+		}
+
+
 		//Methods
 
-		public function Validate(){
+		private function Validate(){
 
 			$valDate = new DateTime();
 
